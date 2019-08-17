@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to heroku-test-app!');
+    expect(page.getTitleText()).toEqual('Welcome to angular-service-worker-app!');
   });
 
   afterEach(async () => {
