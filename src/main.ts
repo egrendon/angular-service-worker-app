@@ -13,7 +13,14 @@ if (environment.production) {
 
 // Add Service Worker js file to bootstrap (Needed for remoteServer) works fine without this on localhost:8080
 platformBrowserDynamic().bootstrapModule(AppModule).then(() => {
-    if ('serviceWorker' in navigator && environment.production) {
+    const isProduction = environment.production;
+    if (isProduction) {
+        console.log('App running Production mode..............');
+    } else {
+        console.log('App running DEV mode..............');
+    }
+
+    if ('serviceWorker' in navigator && isProduction) {
         navigator.serviceWorker.register('ngsw-worker.js');
     }
 }).catch(err => console.log(err));
