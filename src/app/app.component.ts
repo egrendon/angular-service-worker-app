@@ -9,7 +9,7 @@ import { PwaService } from '../services/pwa.service';
 export class AppComponent {
   title = 'angular-service-worker-app';
 
-  constructor(public pwaService: PwaService) {
+  constructor() {
 
   }
 }
