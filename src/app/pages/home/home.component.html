@@ -1,8 +1,6 @@
 
 
-<button *ngIf="pwaService" (click)="pwaService.installPwa()">
-    Install
-</button>
+<button mat-raised-button *ngIf="pwaService" (click)="pwaService.installPwa()">Install</button>
 
 <div class="hero is-info is-fullheight is-bold">
     <div class="hero-body">
