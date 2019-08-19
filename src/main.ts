@@ -15,9 +15,13 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule).then(() => {
     const isProduction = environment.production;
     if (isProduction) {
+        console.log(`*******************************************************`);
         console.log(`App running ${environment.envName}  mode..............`);
+        console.log(`*******************************************************`);
     } else {
+        console.log(`*******************************************************`);
         console.log(`App running ${environment.envName} mode..............`);
+        console.log(`*******************************************************`);
     }
 
     if ('serviceWorker' in navigator && isProduction) {
