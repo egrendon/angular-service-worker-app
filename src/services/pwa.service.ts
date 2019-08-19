@@ -9,7 +9,6 @@ export class PwaService {
   private promptEvent;
 
     constructor(private swUpdate: SwUpdate) {
-      debugger;
       swUpdate.available.subscribe(event => {
             console.log(event);
             if (PwaService.askUserToUpdate()) {
