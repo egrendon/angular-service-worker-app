@@ -4,7 +4,13 @@
 
 export const environment = {
   production: false,
-  envName: 'dev'
+  envName: 'dev',
+
+
+  apiUrl: 'http://localhost:8000/api/',
+  authUrl: 'http://localhost:8000/api-auth/',
+  staticUrl: 'http://localhost:8000/static/',
+  baseUrl: 'http://localhost:8000/',
 };
 
 /*

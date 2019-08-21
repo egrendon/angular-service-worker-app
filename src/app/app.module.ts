@@ -6,24 +6,35 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ServicesModule } from '../services/services.module';
-import { PagesModule } from './pages/pages.module';
-import { ComponentsModule } from './components/component.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ErrorRoutingModule } from './core/error/error-routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor } from './core/interceptor/error.interceptor';
+import { AuthInterceptor } from './core/interceptor/auth.interceptor';
+import { CoreModule } from './core/core.module';
+import { RecipeModule } from './recipe/recipe.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+
+      RecipeModule,
+
+
+    CoreModule,
     BrowserModule,
     BrowserAnimationsModule,
     ServicesModule,
-    ComponentsModule,
-    PagesModule,
     AppRoutingModule,
+    ErrorRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [],
+  providers: [
+      {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+      {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
