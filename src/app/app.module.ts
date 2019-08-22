@@ -14,12 +14,14 @@ import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { CoreModule } from './core/core.module';
 import { RecipeModule } from './pages/recipe/recipe.module';
 import { HomeModule } from './pages/home/home.module';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
     imports: [
+        DeviceDetectorModule.forRoot(),
         HomeModule,
         RecipeModule,
         CoreModule,
