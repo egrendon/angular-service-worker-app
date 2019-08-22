@@ -8,7 +8,7 @@ import {environment} from '../../../../environments/environment';
 })
 export class NotFoundComponent {
 
-  notFoundImgUrl = `${environment.staticUrl}img/404_castle.png`;
+  notFoundImgUrl = `assets/images/404-toast.png`;
 
   constructor() {
   }

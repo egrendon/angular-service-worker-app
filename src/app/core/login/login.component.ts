@@ -19,7 +19,10 @@ export class LoginComponent {
   hide = true;
   webPageSize = webPageSize;
 
-  constructor(public authService: AuthService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) {
+  constructor(public authService: AuthService,
+              private router: Router,
+              private route: ActivatedRoute,
+              private fb: FormBuilder) {
   }
 
   get userName() {

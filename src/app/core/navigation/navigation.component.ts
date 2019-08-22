@@ -9,7 +9,7 @@ import {environment} from '../../../environments/environment';
 })
 export class NavigationComponent {
 
-  iconUrl = `${environment.staticUrl}img/favicon.png`;
+  iconUrl = `/assets/fav/favicon-32x32.png`;
 
   constructor(public authService: AuthService) {
   }

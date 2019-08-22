@@ -8,8 +8,6 @@ import {environment} from '../../../../environments/environment';
 })
 export class UnexpectedComponent {
 
-  unexpectedImgUrl = `${environment.staticUrl}img/500_shadoks.gif`;
-
   constructor() {
   }
 

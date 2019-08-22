@@ -3,8 +3,8 @@ h1, h2, p {
   text-align: center;
 }
 
-img {
+.errorImg {
   display: block;
   margin: 4em auto;
-  background-color: rgb(10, 138, 198);
+  max-height: 20em;
 }

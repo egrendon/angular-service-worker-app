@@ -9,7 +9,7 @@ export const environment = {
 
   apiUrl: 'http://localhost:8000/api/',
   authUrl: 'http://localhost:8000/api-auth/',
-  staticUrl: 'http://localhost:8000/static/',
+  // staticUrl: 'http://localhost:8000/static/',
   baseUrl: 'http://localhost:8000/',
 };
 

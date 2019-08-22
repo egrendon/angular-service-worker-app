@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {environment} from '../../../../environments/environment';
 
 export enum webPageSize {
   ExtraSmall = 'main-section--extra-small',
@@ -14,9 +13,6 @@ export enum webPageSize {
   styleUrls: ['./web-page.component.scss']
 })
 export class WebPageComponent {
-
-  faviconUrl = `${environment.staticUrl}img\favicon.png`;
-
-  constructor() {
+    constructor() {
   }
 }

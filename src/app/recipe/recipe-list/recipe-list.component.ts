@@ -12,7 +12,7 @@ export class RecipeListComponent implements OnInit {
 
   recipeList$: Observable<Recipe[]>;
 
-  constructor(private recipeService: RecipeService,) {
+  constructor(private recipeService: RecipeService) {
   }
 
   ngOnInit() {
