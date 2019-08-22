@@ -1,8 +1,10 @@
-import {Model, ModelState, Recipe, RecipeImage} from './models/app.models';
+import {Model} from './models/app.models';
 import {environment} from '../environments/environment';
+import { Recipe, RecipeImage } from './models/recipe.models';
+import { ModelStateEnum } from './enums/model.enum';
 
 export abstract class ModelSerializer<T extends Model> {
-  abstract fromJson(json: any, state: ModelState): T;
+  abstract fromJson(json: any, state: ModelStateEnum): T;
 
   abstract toCreateJson(instance: T): any;
 
@@ -10,7 +12,7 @@ export abstract class ModelSerializer<T extends Model> {
 }
 
 export class RecipeSerializer implements ModelSerializer<Recipe> {
-  fromJson(json: any, state: ModelState): Recipe {
+  fromJson(json: any, state: ModelStateEnum): Recipe {
     const recipe = new Recipe();
     recipe.id = parseInt(json.id, 10);
     recipe.title = json.title;
@@ -42,7 +44,7 @@ export class RecipeSerializer implements ModelSerializer<Recipe> {
 
 
 export class RecipeImageSerializer implements ModelSerializer<RecipeImage> {
-  fromJson(json: any, state: ModelState): RecipeImage {
+  fromJson(json: any, state: ModelStateEnum): RecipeImage {
     const recipeImage = new RecipeImage();
     recipeImage.id = parseInt(json.id, 10);
     recipeImage.recipe = parseInt(json.recipe, 10);

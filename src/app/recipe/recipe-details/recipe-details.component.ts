@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Recipe, RecipeImage} from '../../models/app.models';
+import {Recipe} from '../../models/recipe.models';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {RecipeService} from '../services/recipes.service';
 import {RecipeImageService} from '../services/recipeImage.service';
+import { RecipeImage } from '../../models/recipe.models';
 
 @Component({
   selector: 'app-recipe-details',

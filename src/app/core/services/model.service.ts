@@ -1,9 +1,10 @@
-import {BaseModel, Model, ModelState} from '../../models/app.models';
+import {BaseModel, Model} from '../../models/app.models';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {ModelSerializer} from '../../app.serializers';
 import {AuthService} from './auth.service';
 import {environment} from '../../../environments/environment';
+import { ModelStateEnum } from '../../enums/model.enum';
 
 
 export class ModelService<T extends BaseModel> {
@@ -30,7 +31,7 @@ export class ModelService<T extends BaseModel> {
   get(id: number | string): Observable<T[]> {
     return this.userService.http.get(
       `${environment.apiUrl}${this.model.modelName}/${id}/`
-    ).pipe(map(data => [this.serializer.fromJson(data, ModelState.Retrieved)]));
+    ).pipe(map(data => [this.serializer.fromJson(data, ModelStateEnum.Retrieved)]));
   }
 
 
@@ -39,7 +40,7 @@ export class ModelService<T extends BaseModel> {
       `${environment.apiUrl}${this.model.modelPlural}/`,
       this.serializer.toCreateJson(item)
     ).pipe(
-      map(data => this.serializer.fromJson(data, ModelState.Created))
+      map(data => this.serializer.fromJson(data, ModelStateEnum.Created))
     );
   }
 
@@ -48,7 +49,7 @@ export class ModelService<T extends BaseModel> {
       `${environment.apiUrl}${this.model.modelPlural}/${item[this.model.lookupField]}/`,
       this.serializer.toUpdateJson(item)
     ).pipe(
-      map(data => this.serializer.fromJson(data, ModelState.Modified))
+      map(data => this.serializer.fromJson(data, ModelStateEnum.Modified))
     );
   }
 
@@ -61,6 +62,6 @@ export class ModelService<T extends BaseModel> {
   }
 
   private convertData(data: any): T[] {
-    return data.map(item => this.serializer.fromJson(item, ModelState.Retrieved));
+    return data.map(item => this.serializer.fromJson(item, ModelStateEnum.Retrieved));
   }
 }

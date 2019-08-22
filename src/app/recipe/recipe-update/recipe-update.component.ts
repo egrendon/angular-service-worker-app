@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {Recipe, RecipeImage} from '../../models/app.models';
+import {Recipe} from '../../models/recipe.models';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {RecipeService} from '../services/recipes.service';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {RecipeImageService} from '../services/recipeImage.service';
+import { RecipeImage } from '../../models/recipe.models';
 
 @Component({
   selector: 'app-recipe-update',

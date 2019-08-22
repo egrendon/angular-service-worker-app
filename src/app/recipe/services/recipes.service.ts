@@ -1,5 +1,5 @@
 import {ModelService} from '../../core/services/model.service';
-import {Recipe} from '../../models/app.models';
+import {Recipe} from '../../models/recipe.models';
 import {AuthService} from '../../core/services/auth.service';
 import {RecipeSerializer} from '../../app.serializers';
 import {Injectable} from '@angular/core';
