@@ -1,5 +1,5 @@
 import {RecipeListComponent} from './recipe-list/recipe-list.component';
-import {AuthGuard} from '../core/guard/auth.guard';
+import {AuthGuard} from '../../core/guard/auth.guard';
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {RecipeDetailsComponent} from './recipe-details/recipe-details.component';
@@ -16,12 +16,12 @@ const routes: Routes = [
       },
       {
         path: 'add',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         component: RecipeAddComponent
       },
       {
         path: 'edit/:slug',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         component: RecipeUpdateComponent
       },
       {

@@ -12,7 +12,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptor/error.interceptor';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { CoreModule } from './core/core.module';
-import { RecipeModule } from './recipe/recipe.module';
+import { RecipeModule } from './pages/recipe/recipe.module';
 
 @NgModule({
     declarations: [
