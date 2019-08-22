@@ -1,5 +1,7 @@
 import { PwaService } from './pwa.service';
 import { NgModule } from '@angular/core';
+import { RecipeService } from './recipes.service';
+import { RecipeImageService } from './recipeImage.service';
 
 @NgModule({
     imports: [],
@@ -7,10 +9,11 @@ import { NgModule } from '@angular/core';
     exports: [],
     providers: [
         PwaService,
+        // RecipeService,
+        // RecipeImageService,
     ],
 })
 
-// TODO: Ensure that CoreModule is only loaded into AppModule
 export class ServicesModule {
 }
 

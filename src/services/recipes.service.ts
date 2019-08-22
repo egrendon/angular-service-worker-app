@@ -10,7 +10,6 @@ import {Injectable} from '@angular/core';
 export class RecipeService extends ModelService<Recipe> {
 
   constructor(authService: AuthService) {
-    debugger;
     super(
       authService,
       Recipe,
