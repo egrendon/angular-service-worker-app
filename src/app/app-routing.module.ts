@@ -7,7 +7,7 @@ import { LoginComponent } from './core/login/login.component';
 const routes: Routes = [
     // first landing page routes need to be defined here
     // and the rest will be loaded via dynamic router
-    {path: '', redirectTo: 'recipe', pathMatch: 'full'},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'login', component: LoginComponent},
     {path: 'logout', component: LogoutComponent},
 ];

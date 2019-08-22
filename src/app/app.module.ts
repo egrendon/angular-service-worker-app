@@ -13,12 +13,14 @@ import { ErrorInterceptor } from './core/interceptor/error.interceptor';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { CoreModule } from './core/core.module';
 import { RecipeModule } from './pages/recipe/recipe.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
     imports: [
+        HomeModule,
         RecipeModule,
         CoreModule,
         BrowserModule,
