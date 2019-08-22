@@ -1,4 +1,4 @@
-import {BaseModel, Model, ModelState} from '../../app.models';
+import {BaseModel, Model, ModelState} from '../../models/app.models';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {ModelSerializer} from '../../app.serializers';

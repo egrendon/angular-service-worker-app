@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {Recipe, RecipeImage} from '../../app.models';
+import {Recipe, RecipeImage} from '../../models/app.models';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {RecipeService} from '../services/recipes.service';
 import {map, switchMap} from 'rxjs/operators';

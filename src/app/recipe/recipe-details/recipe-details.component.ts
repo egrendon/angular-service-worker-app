@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Recipe, RecipeImage} from '../../app.models';
+import {Recipe, RecipeImage} from '../../models/app.models';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {RecipeService} from '../services/recipes.service';

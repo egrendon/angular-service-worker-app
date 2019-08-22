@@ -15,26 +15,24 @@ import { CoreModule } from './core/core.module';
 import { RecipeModule } from './recipe/recipe.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-
-      RecipeModule,
-
-
-    CoreModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    ServicesModule,
-    AppRoutingModule,
-    ErrorRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-  ],
-  providers: [
-      {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-      {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        RecipeModule,
+        CoreModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        ServicesModule,
+        AppRoutingModule,
+        ErrorRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    ],
+    providers: [
+        {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
