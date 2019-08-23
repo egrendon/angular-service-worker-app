@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {AuthService} from '../services/auth.service';
 import {environment} from '../../../environments/environment';
+import { MicroSoftGraphService } from '../../services/micro-soft-graph.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,6 +11,14 @@ export class NavigationComponent {
 
   iconUrl = `/assets/fav/favicon-32x32.png`;
 
-  constructor(public authService: AuthService) {
+  constructor(public msService: MicroSoftGraphService) {
   }
+
+    async signIn(): Promise<void> {
+        await this.msService.signIn();
+    }
+
+    signOut(): void {
+        this.msService.signOut();
+    }
 }
