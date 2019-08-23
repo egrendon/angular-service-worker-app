@@ -15,7 +15,8 @@
     </app-web-page-header>
     <app-web-page-content>
         <ng-container>
-            This is my content area
+            <div *ngIf="user">Welcome {{user.name}}!</div>
+            <div *ngIf="!user">Login plz...</div>
         </ng-container>
 
         <!--<ng-container *ngFor="let recipe of recipeList">-->

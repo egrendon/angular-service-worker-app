@@ -2,6 +2,7 @@ import { PwaService } from './pwa.service';
 import { NgModule } from '@angular/core';
 import { PlatformService } from './platform.service';
 import { MicroSoftGraphService } from './micro-soft-graph.service';
+import { MemoryStoreService } from './memory-store/memory-store.service';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { MicroSoftGraphService } from './micro-soft-graph.service';
         PwaService,
         PlatformService,
         MicroSoftGraphService,
+        MemoryStoreService,
     ],
 })
 

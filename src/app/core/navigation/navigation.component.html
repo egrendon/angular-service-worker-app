@@ -4,10 +4,10 @@
     DT Room Roulette
   </a>
   <div class="menu__filler"></div>
-  <a *ngIf="(authService.currentUser$ | async)" mat-button routerLink="/logout">
+  <a *ngIf="msService.user" mat-button (click)="signOut()">
     Logout
   </a>
-  <a *ngIf="!(authService.currentUser$ | async)" mat-button routerLink="/login">
+  <a *ngIf="!msService.user" mat-button (click)="signIn()">
     Login
   </a>
 </mat-toolbar>
