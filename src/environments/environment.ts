@@ -7,10 +7,10 @@ export const environment = {
   envName: 'dev',
 
 
-  apiUrl: 'http://localhost:4200/api/',
-  authUrl: 'http://localhost:4200/api-auth/',
+  apiUrl: 'http://localhost:8000/api/',
+  authUrl: 'http://localhost:8000/api-auth/',
   // staticUrl: 'http://localhost:8000/static/',
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'http://localhost:8000/',
 };
 
 /*

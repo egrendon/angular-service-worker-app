@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PlatformService } from './services/platform.service';
+import { PwaService } from '../services/pwa.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { PlatformService } from './services/platform.service';
 export class AppComponent {
   title = 'angular-service-worker-app';
 
-  constructor(public platformService: PlatformService) {
-    platformService.logOutPlatform();
+  constructor() {
+
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "angular-service-worker-app",
-  "short_name": "Room Roulette ",
+  "short_name": "ASWA",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

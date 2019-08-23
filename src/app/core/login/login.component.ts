@@ -1,57 +1,52 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BroadcastService, MsalService } from '@azure/msal-angular';
-import { Subscription } from 'rxjs';
+import {Component} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from '../services/auth.service';
+import {FormBuilder, Validators} from '@angular/forms';
+import {webPageSize} from '../../shared/web-page/web-page/web-page.component';
+import {throwError} from 'rxjs';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent {
 
-    public loggedIn: boolean;
-    public userInfo: any = null;
-    private subscription: Subscription;
-    public isIframe: boolean;
+  loginForm = this.fb.group({
+    userName: ['', Validators.required],
+    password: ['', Validators.required]
+  });
+  hide = true;
+  webPageSize = webPageSize;
 
-    constructor(private broadcastService: BroadcastService, private authService: MsalService) {
-        //  This is to avoid reload during acquireTokenSilent() because of hidden iframe
-        this.isIframe = window !== window.parent && !window.opener;
-        if (this.authService.getUser()) {
-            this.loggedIn = true;
-        } else {
-            this.loggedIn = false;
+  constructor(public authService: AuthService,
+              private router: Router,
+              private route: ActivatedRoute,
+              private fb: FormBuilder) {
+  }
+
+  get userName() {
+    return this.loginForm.get('userName');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
+  }
+
+  tryLogin(): void {
+    if (this.loginForm.valid) {
+      this.authService.login(this.loginForm.get('userName').value, this.loginForm.get('password').value).subscribe(
+        user => {
+          const nextUrl = this.route.snapshot.queryParamMap.get('next');
+          this.router.navigateByUrl(nextUrl);
+        },
+        err => {
+          if (err.status === 400) {
+            this.loginForm.setErrors({invalidUserOrPassword: true});
+          }
+          return throwError(err);
         }
+      );
     }
-
-    login(): void {
-        this.authService.loginPopup(['user.read', 'api://a88bb933-319c-41b5-9f04-eff36d985612/access_as_user']);
-    }
-
-    logout(): void {
-        this.authService.logout();
-    }
-
-
-    ngOnInit(): void {
-
-        this.broadcastService.subscribe('msal:loginFailure', (payload) => {
-            console.log('login failure ' + JSON.stringify(payload));
-            this.loggedIn = false;
-
-        });
-
-        this.broadcastService.subscribe('msal:loginSuccess', (payload) => {
-            console.log('login success ' + JSON.stringify(payload));
-            this.loggedIn = true;
-        });
-
-    }
-
-    ngOnDestroy() {
-        this.broadcastService.getMSALSubject().next(1);
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
-    }
+  }
 }

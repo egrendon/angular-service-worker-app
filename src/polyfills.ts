@@ -58,9 +58,6 @@
 import 'core-js/es/reflect';
 import 'zone.js/dist/zone'; // Included with Angular CLI.
 import 'hammerjs';
-import 'core-js/es/string';
-import 'core-js/es/array';
-import 'core-js/es/map';
 // import 'web-animations-js';
 // https://www.npmjs.com/package/web-animations-js
 
