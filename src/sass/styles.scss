@@ -1,8 +1,8 @@
 @import "base/reset";
-@import "theme/my-app-theme-container-theme";
+@import "theme/mushfood-theme";
 @import "base/base";
 
-.my-app-theme-container {
+.mushfood {
   @import "mat-components/mat-list";
   @import "mat-components/mat-checkbox";
   @import "mat-components/mat-card";
