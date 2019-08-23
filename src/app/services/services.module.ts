@@ -1,8 +1,8 @@
 import { PwaService } from './pwa.service';
 import { NgModule } from '@angular/core';
-import { RecipeService } from './recipes.service';
-import { RecipeImageService } from './recipeImage.service';
 import { PlatformService } from './platform.service';
+import { MicroSoftGraphService } from './micro-soft-graph.service';
+
 
 @NgModule({
     imports: [],
@@ -11,8 +11,7 @@ import { PlatformService } from './platform.service';
     providers: [
         PwaService,
         PlatformService,
-        // RecipeService,
-        // RecipeImageService,
+        MicroSoftGraphService,
     ],
 })
 

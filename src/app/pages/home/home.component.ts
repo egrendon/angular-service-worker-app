@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PwaService } from '../../../services/pwa.service';
+import { PwaService } from '../../services/pwa.service';
 
 @Component({
   selector: 'app-home',

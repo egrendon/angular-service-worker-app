@@ -3,8 +3,8 @@ import {Observable} from 'rxjs';
 import {Recipe} from '../../../models/recipe.models';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
-import {RecipeService} from '../../../../services/recipes.service';
-import {RecipeImageService} from '../../../../services/recipeImage.service';
+import {RecipeService} from '../../../services/recipes.service';
+import {RecipeImageService} from '../../../services/recipeImage.service';
 import { RecipeImage } from '../../../models/recipe.models';
 
 @Component({

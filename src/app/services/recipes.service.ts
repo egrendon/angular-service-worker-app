@@ -1,7 +1,7 @@
-import {ModelService} from '../app/core/services/model.service';
-import {Recipe} from '../app/models/recipe.models';
-import {AuthService} from '../app/core/services/auth.service';
-import {RecipeSerializer} from '../app/app.serializers';
+import {ModelService} from '../core/services/model.service';
+import {Recipe} from '../models/recipe.models';
+import {AuthService} from '../core/services/auth.service';
+import {RecipeSerializer} from '../app.serializers';
 import {Injectable} from '@angular/core';
 
 @Injectable({

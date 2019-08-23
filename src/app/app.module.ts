@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { ServicesModule } from '../services/services.module';
+import { ServicesModule } from './services/services.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorRoutingModule } from './core/error/error-routing.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
